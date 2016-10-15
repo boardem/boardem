@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block head_title %}
+Kiwawu | Your Choice of Freedom in Social Media
+{% endblock %}
+{% block content %}
+<h2>This is Your news feed</h2>
+
+<ul id="newsfeed_ul">
+  {% for textpost in all_post %}
+
+  <div id="newsfeed_fuck">
+  <li id="newsfeed_li">
+    <a  id="newfeed_link" href="{% url 'post:postdetail' textpost.slug %}">{{ textpost.text_post_title }}</a><br>
+    <div id="newfeed_stuff">
+    Created: {{ textpost.time_stamp|timesince }} Ago  // Updated: {{ textpost.date_updated|timesince }} Ago. Auther:{{ textpost.user }} </div></li></div>
+
+  <li><a href="{% url 'post:postdetail' textpost.slug %}">{{ textpost.text_post_title }}</a>
+    Created: {{ textpost.time_stamp|timesince }} Ago  // Updated: {{ textpost.date_updated|timesince }} Ago. Auther:{{ textpost.user }} </li>
+
+  <li><a href="{% url 'post:postdetail' textpost.slug %}">{{ textpost.text_post_title }}</a>
+    Created: {{ textpost.time_stamp|timesince }} Ago  // Updated: {{ textpost.date_updated|timesince }} Ago. Auther:{{ textpost.user }} </li>
+
+  {% endfor %}
+</ul>
+{% endblock %}

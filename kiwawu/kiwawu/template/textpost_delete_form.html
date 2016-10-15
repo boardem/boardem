@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block head_title %}
+Kiwawu | Your Choice of Freedom in Social Media
+{% endblock %}
+{% block content %}
+<h2>This is Your Delete view</h2>
+
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input type="submit" value="Confirm" />
+</form>
+{% endblock %}

@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+{% block head_title %}
+Board-'Em' | Profile
+{% endblock %}
+
+{% block content %}
+
+<p>city:{{user.profile.city}}</p>
+<p>Website:{{user.profile.website}}</p>
+<p>bio:{{user.profile.bio}}</p>
+<p>phone:{{user.profile.phone}}</p>
+<p>city:{{user.profile.city}}</p>
+<p>organization:{{user.profile.organization}}</p>
+<p>country:{{user.profile.country}}</p>
+<p>work:{{user.profile.work}}</p>
+
+
+{% if pictures %}
+<br><br>
+  {% for pictures in pictures %}
+    {% if pictures.pictures %}
+        <img src="{{ pictures.pictures.url }}"/> ok ok<br>
+    {% endif %}
+
+    {%endfor%}
+{% else %}
+    <p>no pic's to display</p>
+{% endif %}
+<br>
+<br>
+
+
+<a href="{%url 'userprofile:edit'%}">Edit Pictures</a>
+<a href="{%url 'userprofile:2profile'%}">Edit Profile</a>
+
+<a href="{%url 'userprofile:edit'%}">Edit</a>
+
+
+<a href="{%url 'userprofile:edit'%}">Edit</a>
+
+{% endblock %}

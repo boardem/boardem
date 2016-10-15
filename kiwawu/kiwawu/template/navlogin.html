@@ -1,0 +1,44 @@
+<div id="total_nav">
+
+<div id="nav">
+  <ul>
+    <li id="navlogin_itemlist"><a href="{% url 'userlogin:home' %}">Home</a></li>
+    <li id="navlogin_itemlist"><a href="{% url 'post:post' %}">Post</a></li>
+    {% if user.is_authenticated %}
+      <li id="navlogin_itemlist"><a href="{% url 'userprofile:profile' %}">Profile</a></li>
+    {% else %}
+    {% endif %}
+    <li id="navlogin_itemlist"><a href="{% url 'post:search' %}">Search</a></li>
+    <li id="navlogin_itemlist"><a href="{% url 'post:newsfeed' %}">News Feed</a></li>
+  </ul>
+</div>
+<div id="form_login">
+  <ul>
+    {% if user.is_authenticated %}
+      <li>
+        <a href="{% url 'userlogin:logout' %}">Logout</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{% url 'userlogin:registernow' %}">Register</a>
+      </li>
+      <form method='POST' action="{% url 'userlogin:login' %}">{% csrf_token %}
+      <table>
+        <tr>
+          <td>{{ form.username.label_tag }}</td>
+          <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+          <td>{{ form.password.label_tag }}</td>
+          <td>{{ form.password }}</td>
+        </tr>
+      </table>
+
+      <input type="submit" value="login" />
+      <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    {% endif %}
+  </ul>
+</div>
+
+</div>

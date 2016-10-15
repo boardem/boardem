@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+
+
+<head>
+  <!-- this is for all of the cool icons out there   -->
+  <script   src="https://use.fontawesome.com/a149c646a8.js"></script>
+  <script   src="http://code.jquery.com/jquery-1.12.2.min.js"   integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="   crossorigin="anonymous"></script>
+
+
+  <script   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <script   src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js'></script>
+
+  <script   type="text/javascript">
+  $(document).ready(function(){
+      $(".stuff").each(function(){
+              var content = $(this).text()
+              console.log(content)
+              var markedContent = marked(content)
+              console.log(markedContent)
+              $(this).html(markedContent)
+
+
+      })
+    })
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85673065-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <meta charset="UTF-8" />
+  	<link rel="stylesheet" href="{% static "css/global.css" %}" />
+
+	<title>{% block head_title %}{% endblock %}</title>
+
+</head>
+
+<header>
+  <div id="logo">
+  <img src="{% static "media/logo.png" %}" height="67" width="234" alt="board-em" />
+</div>
+{% include 'navlogin.html' %}
+
+</header>
+<br>
+<div id="mainbody">
+
+<aside>
+<div id="profile_pictures">
+    <img src="{% static "media/person.jpg" %}" id="profile_picture"/>
+</div>
+<div>
+
+    <h2>Personal Picks</h2>
+    <ul>
+      <li><a href="#">Friends</a></li>
+      <li><a href="#">Cars</a></li>
+      <li><a href="#">Porn</a></li>
+      <li><a href="#">Web Development</a></li>
+      <li><a href="#">Go Karts</a></li>
+    </ul>
+</div>
+<div>
+    <h2>Board-'Em' Social</h2>
+    <ul>
+      <li><a href="#">Trending</a></li>
+      <li><a href="#">Random</a></li>
+      <li><a href="#">Top News</a></li>
+      <li><a href="#">Loudest Contributers</a></li>
+    </ul>
+</div>
+
+</aside>
+
+<div id="maincontent">
+	{% block content %}
+	{% endblock %}
+
+</div>
+</div>
+
+<footer>
+
+	<div id ="footloose">
+	  <a href="{% url 'landingpage:contact' %}">Contacts Us</a>
+
+	  <a href="{% url 'landingpage:about' %}">About Us</a>
+		<div id="mainfooter">
+	<small>Website by: Nicholas Hellman, Christopher Lanphier, Jacob Mroczkowski</small>
+	<br />
+	<small>Test Version: .02.3</small>
+</div>
+
+</div>
+</footer>
+
+
+</html>

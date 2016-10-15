@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e8e8e8;
+}
+
+#logo {
+    float: left;
+
+}
+
+#loggedin {}
+
+header {
+    clear: both;
+    height: 10ex;
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px solid #D22927;
+    background-color: #e8e8e8;
+}
+
+#form_login {
+    float: right;
+    padding-top: 1em;
+}
+
+#form_login ul {
+    display: inline;
+    list-style: none;
+}
+
+#form_login li {
+    float: left;
+    padding: .35em;
+}
+
+#form_login form {
+    display: flex;
+    float: right;
+    list-style: none;
+}
+
+#total_nav {
+  display: flex;
+  float: right;
+}
+
+#nav {
+    float: right;
+    padding: .35em;
+}
+
+#nav ul {
+    display: inline-flex;
+}
+
+#nav li {
+    padding-right: .35em;
+    padding-left: .35em;
+    list-style: none;
+}
+
+#mainbody {
+    display: flex;
+}
+
+#helper {
+    margin: inherit;
+    padding: inherit;
+}
+
+nav {
+    float: right;
+    margin-top: 12px;
+    align-items: flex-end;
+}
+
+nav li {
+    display: inline;
+    padding-right: 2ex;
+}
+
+nav ul {
+    margin-right: 2ex;
+}
+
+nav a {
+    padding-right: 2ex;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: grey;
+    border-bottom: 3px solid black;
+}
+
+#maincontent {
+    width: 88%;
+    margin: 0;
+    padding: 0;
+    background-color: #0effdb;
+}
+
+aside {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 2ex;
+    border-right: 3px solid #D22927;
+    background-color: yellow;
+    width:10%;
+}
+
+#person {
+    width: 20ex;
+    margin: 0 auto;
+    padding: 2ex;
+}
+
+
+#profile_pictures {
+  display: flex;
+}
+#profile_picture {
+  width: 100%;
+}
+
+footer {
+    clear: both;
+    padding-bottom: 2ex;
+    text-align: center;
+    background-color: orange;
+}
+
+#blocks {
+    display: block;
+    width: 25%;
+    background-color: darkblue;
+}
+
+#line1 {
+    display: flex;
+    margin: 1ex;
+}
+
+#line2 {
+    display: flex;
+    margin: 1ex;
+}
+
+#line3 {
+    display: flex;
+    margin: 1ex;
+}
+
+#boardcontent {
+    margin: 1ex;
+}
+
+#newsfeed_ul {
+    list-style-type: none;
+    display: -webkit-box;
+    max-width: 90%;
+}
+#newsfeed_li {
+
+background-color: blue;
+padding:.9em;
+margin: .1em;
+width: 10%;
+display: -webkit-inline-box;
+}
+
+#newfeed_stuff {
+display: -webkit-inline-box;
+}
+#newfeed_link {
+  height: 100%;
+
+}
+#newsfeed_fuck {
+display: inline;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<HTML lang="en">
+{% load staticfiles %}
+{% csrf_token %}
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="{% static "css/global.css" %}" />
+
+</head>
+
+<body>
+
+<div id="workarea">
+
+<header id="masthead" role="banner">
+	<img src="{% static "media/kiwawu.png" %}" height="67" width="234" alt="kiwawu" />
+
+
+
+	<nav role="navigation">
+		<div id="loggedin">
+			{% if request.user.is_authenticated %}
+			<a href="{% url 'auth_logout' %}">Logout</a>
+			{% else %}
+			<a href="{% url 'registration_register' %}">Register</a>
+			{% endif %}
+{% csrf_token %}
+		{% if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}{% csrf_token %}
+		<form action='' method="POST">{% csrf_token %}
+			<input type="text" name="username" placeholder="Username">{% csrf_token %}
+			<input type="text" name="password" placeholder="Password">{% csrf_token %}
+			<button type="submit">Login</button>{% csrf_token %}
+		</form>{% csrf_token %}
+		{% endif %}
+		</div>
+
+		<ul>
+			<li><a href="/accounts/register">Register</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="#">Discover</a></li>
+			<li><a href="/accounts/profile/">Account</a></li>
+			<li><a href="/search-form/">Search</a></li>
+		</ul>
+	</nav>
+
+</header>
+<div id="container" role="main">
+
+<section>
+{% block content %}
+{% endblock %}
+</section>
+<section>
+	<h2>What is Kiwawu?</h2>
+
+	<p>
+	Kiwawu is a new type of social media website that is ment to bring Bloging, Vloging, Sloging,
+	Moging.... whatever, to social media. Being able to share anything that you enjoy and enjoy other content
+	the way they want it to be viewed.
+	</p>
+</section>
+</div>
+<footer>
+<small>Website by: Nicholas Hellman, Christopher Lanphier, Jacob Mroczkowski</small>
+<br />
+<small>Test Version: .02.3</small>
+
+</footer>
+
+
+
+</body>
+
+</HTML>

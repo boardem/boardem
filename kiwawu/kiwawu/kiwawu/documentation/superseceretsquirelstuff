@@ -1,0 +1,85 @@
+
+
+OPERATION Kiwawu
+
+Customizable social media
+
+
+intent:
+
+features
+disable comments
+ban ip address/mac
+css valadator
+background music spotif api to link
+tag limit of 5
+
+Goals:
+3 moth ALPHA v0.5
+    features
+        profil setup
+          UPLOAD PICTURE
+        mutiple board per user
+        finD alt search engine AND IMPLMENT
+6 month public beta v0.75
+1 year v1.0
+
+
+PRICTUE UPLOAD:
+  WEBSITE EDITOR based customization
+
+CSS
+  VALIDATOR https://github.com/CSSLint/csslint/wiki
+  popular css models/standard
+  custom css option for standard templet(get rid of bs code)toggle button
+
+NEWS FEEDS
+    ONE FEED EVERONE YOU SUBSCRIBES
+    FRENDS
+    SUGGESTION
+    TOP TRENDIONG
+    NEWEST ADDED (FOR A DAY) RANDOM
+COLLECTION
+    FRIENDS
+    SUBSCRIBED
+    SUBSCRIBERS
+
+
+
+
+RSS
+
+
+ALLOW A GROUP OF PEOPLE TO EDIT POST
+
+So here is where ill put  what is in my head.   I will probably lay out some goals some long-term and Midterm goals. Some of this might not be possible, and if that's the case call me out on it. Objective criticism is always good.
+
+
+ Okay so what I'm thinking is like a completely customizable social media.
+Say we have user A. well A has an in his mind of basically a youtube channel. He goes to our site and we give a blank ‘board’ now he can customize his board in all sorts of ways. background , font, placement of videos.
+
+So how would he go about building this? So we have a few ready made templates. Think like a normal social media profile; Or we have different sizes of boxes that he can position himself on his ‘board’
+In those boxes he can define what goes into them. Picture here, header image here, he can define a box as videos and different options to display those, like a deck of cards or cds in a juke box
+Comments under the vid
+Users can have multiple boards
+Can be private
+Password protected
+Ability to have comments or not
+Start everyone first board is basically a fb page, they can customize it once made, thats the first ‘board’ people see when finding friends or companies. Companies would make this there advertising pg most likely.
+Other users can interact with your board only as defined by you.
+Comments (Y/N) Photos (Y/N) Images (Y/N) Videos (Y/N)
+Users can moderate comments and elect other moderators for his/her own board
+Im fucking starving
+“Recommended boards”
+Have a feed of boards the user chooses,
+Listen to music of boards?(!!!)
+
+User B is a girl and wants to make a collage. But doesnt want people to see in the first profile “my boards’ she can use it as a diary also.
+
+Users can build templates. Have an area for that. Template exchange
+
+More of a template to make a simple website
+
+Skill gap compression for the internet
+
+Reddit but has the possibility to looks better?

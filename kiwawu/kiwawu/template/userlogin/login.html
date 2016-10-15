@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block head_title %}
+Kiwawu | Register
+{% endblock %}
+{% block content %}
+<h2>This is Your Login Form</h2>
+
+<form method='POST' action="{% url 'userlogin:login' %}">
+{% csrf_token %}
+<table>
+<tr>
+  <td>{{ form.username.label_tag }}</td>
+  <td>{{ form.username }}</td>
+</tr>
+<tr>
+  <td>{{ form.password.label_tag }}</td>
+  <td>{{ form.password }}</td>
+</tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% endblock %}

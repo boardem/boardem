@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+ {% block content %}
+
+<h1>this is your fucking post</h1>
+
+<ul id="newsfeed_ul">
+
+
+</ul>
+<p>these are your post</p>
+<ul id="newsfeed_ul">
+
+{% if not all_post %}
+  <p>you have no post to display</p>
+{% endif %}
+
+  {% for textpost in all_post %}
+  <li><a href="{% url 'post:postdetail' textpost.slug %}">{{ textpost.text_post_title }}</a>
+    Created: {{ textpost.time_stamp|timesince }} Ago  // Updated: {{ textpost.date_updated|timesince }} Ago. Auther:{{ textpost.user }}</li>
+  {% endfor %}
+
+</ul>
+
+{% endblock %}

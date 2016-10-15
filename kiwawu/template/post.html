@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head_title %}
+Kiwawu | Your Choice of Freedom in Social Media
+{% endblock %}
+{% block content %}
+
+
+<h1>Post something that you friends would like!</h1>
+<div class="">
+<form id="post_form" method="post" action=""
+      enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form|safe }}
+    <input type="submit" name="submit" value="Submit" />
+</form>
+{% endblock %}

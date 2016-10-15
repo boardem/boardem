@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block head_title %}
+Kiwawu | Your Choice of Freedom in Social Media
+{% endblock %}
+{% block content %}
+<div id="list">
+    <p>You searched for: {{ query }}</p>
+
+<form method='GET' action=''>
+<input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'/>
+<input type='submit' value='Search' />
+</form>
+{% for obj in object_list %}
+        {% if obj.image %}
+         <img src='{{ obj.image.url }}' class='img-responsive' />
+        {% endif %}
+        {% if obj.draft %}<h3>Staff only: Draft</h3>{% endif %} {% if obj.publish > today %}<h3>Staff Only: Future Post</h3>{% endif %}
+        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.publish }}</small></h3>
+        {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
+        <p>{{ obj.content|linebreaks|truncatechars:120 }}</p>
+        <p><a href="{{ obj.get_absolute_url }}" class="" role="button">View</a></p>
+      </div>
+    </div>
+  </div>
+<hr/>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block head_title %}
+Kiwawu | Your Choice of Freedom in Social Media
+{% endblock %}
+{% block content %}
+<p>Auther: {{ post.user }} {{ post.publish }} {{ post.draft }}</p>
+{% autoescape off %}
+<h1>this is the tile section</h1>
+<p>{{ post.text_post_title }}</p>
+<h1>this is the content section</h1>
+
+<div class='row'>
+<div class='col-sm-12'>
+{{ post.text_post_content|safe }}
+</div>
+</div>
+
+
+
+</br>
+
+<h1>This is the comments section</h1>
+<p>{{ post.text_post_select }}</p>
+<p>{{ post.comments_text }}</p>
+{{ post.comments_select }}<br />
+
+
+{% if post.pictureupload %}
+
+<img src='{{ post.pictureupload.url }}' />
+{% else %}
+    <p>no pic to display</p>
+{% endif %}
+{% endautoescape %}
+<br>
+ <a href="{% url 'post:postdetailupdate' post.slug %}">edit</a>
+ <a href="{% url 'post:postdetaildelete' post.slug %}">delete</a>
+<br>
+
+{{ share_string }}
+ <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+Facebook
+ </a>
+
+ <a href="https://twitter.com/home?status=I'{{ share_string }}%20{{ request.build_absolute_uri }}">
+Twitter
+</a>
+
+<a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'>
+
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}title={{ share_string }}summary={{ share_string }}source={{ request.build_absolute_uri }}">
+Linkedin
+</a>
+
+<a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri }}title={{ share_string }}">Share on Reddit</a>
+
+{% endblock %}

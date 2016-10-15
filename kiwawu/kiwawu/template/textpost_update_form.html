@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block head_title %}
+Kiwawu | Your Choice of Freedom in Social Media
+{% endblock %}
+{% block content %}
+<h2>This is Your Update view</h2>
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Update" />
+</form>
+
+
+{% endblock %}

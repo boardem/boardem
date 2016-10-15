@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+ {% block content %}
+
+ {% block head_title %}
+ Board-'Em' | Profile
+ {% endblock %}
+
+
+<h1>this is your fucking profile, now edit that shit!</h1>
+<a href="{% url 'userprofile:mypost' %}">view my post</a>
+
+
+<form id="post_form" method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+
+    {{ pictures_form.as_p }}
+    {{ form.as_p }}
+    <input type="submit" name="submit" value="Submit" />
+</form>
+
+{% if pictures %}
+  {% for pictures in pictures %}
+    {% if pictures.pictures %}
+      <img src=" {{ pictures.pictures.url }}" />  <a href="{% url 'userprofile:picdelete' %}">Delete Me</a>
+
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% endblock %}
