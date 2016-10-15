@@ -43,7 +43,7 @@ class textpost(models.Model):
            val = getattr(self, field_name, False)
            if val:
                setattr(self, field_name, val.capitalize())
-           super(Profile, self).save(*args, **kwargs)
+           super(textpost, self).save(*args, **kwargs)
 
     def __unicode__(self):
        return self.text_post_title
